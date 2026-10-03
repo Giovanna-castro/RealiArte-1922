@@ -26,7 +26,7 @@
       "naSemana": true,
       "parede": "esquerda",
       "z": -3.5,
-      "largura": 1.1,
+      "largura": 1.14,
       "altura": 1.4,
       "imagem": "assets/obras/homem-amarelo.jpg",
       "cores": [
@@ -48,8 +48,8 @@
       "naSemana": true,
       "parede": "esquerda",
       "z": 0,
-      "largura": 1.0,
-      "altura": 1.3,
+      "largura": 1.14,
+      "altura": 1.4,
       "imagem": "assets/obras/a-boba.jpg",
       "cores": [
         "#2a4a7a",
@@ -70,8 +70,8 @@
       "naSemana": true,
       "parede": "esquerda",
       "z": 3.5,
-      "largura": 1.0,
-      "altura": 1.3,
+      "largura": 1.05,
+      "altura": 1.4,
       "imagem": "assets/obras/capa-catalogo.jpg",
       "cores": [
         "#1a1a1a",
@@ -92,8 +92,8 @@
       "naSemana": true,
       "parede": "direita",
       "z": -3.5,
-      "largura": 0.9,
-      "altura": 1.4,
+      "largura": 1.7,
+      "altura": 1.275,
       "imagem": "assets/obras/eva.jpg",
       "cores": [
         "#7a6a58",
@@ -114,8 +114,8 @@
       "naSemana": false,
       "parede": "direita",
       "z": 0,
-      "largura": 1.0,
-      "altura": 1.3,
+      "largura": 1.25,
+      "altura": 1.25,
       "imagem": "assets/obras/a-negra.jpg",
       "cores": [
         "#6a4a2a",
@@ -136,8 +136,8 @@
       "naSemana": false,
       "parede": "direita",
       "z": 3.5,
-      "largura": 1.1,
-      "altura": 1.3,
+      "largura": 1.18,
+      "altura": 1.4,
       "imagem": "assets/obras/abaporu.jpg",
       "cores": [
         "#2e7d4f",

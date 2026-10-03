@@ -5,7 +5,7 @@ Sala de museu virtual em 360° (A-Frame / WebGL) com obras ligadas à **Semana d
 ## Como usar
 - **Olhar:** gire o celular (giroscópio) ou arraste a tela. No iPhone, o Safari pede permissão de movimento.
 - **Andar:** joystick na tela (celular) ou WASD/setas (computador).
-- **Quadros:** aproxime-se e toque. Abre autor, técnica e o que a obra simboliza.
+- **Quadros:** toque num quadro. Se estiver longe, você é levado até ele. Abre autor, técnicas, o que inspirou a obra e o que ela simboliza.
 - **Parede central:** toque no letreiro "Semana de Arte Moderna" para ler o que foi a Semana e o que a motivou.
 
 ## Rodar no computador
@@ -23,7 +23,7 @@ Todos os textos estão em `data/obras.json` (autor, técnica, simbolismo, posiç
 **Os textos são rascunhos: confira com a bibliografia do seu trabalho antes de entregar.**
 
 ## Imagens dos quadros
-Sem imagem, cada quadro mostra uma arte provisória gerada. Para usar a reprodução real,
+Sem imagem, cada quadro mostra uma arte provisória gerada. As imagens reais precisam ser adicionadas por você. Para usar a reprodução real,
 salve o arquivo com o nome indicado em `imagem` no JSON, dentro de `assets/obras/`
 (ex.: `assets/obras/abaporu.jpg`). Ele substitui a provisória automaticamente.
 Para trabalho acadêmico, cite a fonte da imagem (museu, Wikimedia Commons etc.).

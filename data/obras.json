@@ -1,0 +1,118 @@
+{
+  "semana": {
+    "titulo": "Semana de Arte Moderna",
+    "subtitulo": "Teatro Municipal de São Paulo · 13, 15 e 17 de fevereiro de 1922",
+    "secoes": [
+      {
+        "titulo": "O que foi",
+        "texto": "Evento cultural realizado no Teatro Municipal de São Paulo, em três noites de festivais, com exposição de artes plásticas no saguão, conferências, recitais de poesia e concertos. Reuniu artistas e intelectuais como Mário de Andrade, Oswald de Andrade, Menotti del Picchia, Graça Aranha, Anita Malfatti, Di Cavalcanti, Victor Brecheret e Heitor Villa-Lobos. O público reagiu com vaias e polêmica, mas o evento se tornou o marco inicial do Modernismo no Brasil."
+      },
+      {
+        "titulo": "O que motivou sua criação",
+        "texto": "Os artistas queriam romper com o academicismo e o parnasianismo, que valorizavam modelos europeus e regras rígidas, e defender a liberdade de criação e uma arte com identidade brasileira. Eram influenciados pelas vanguardas europeias (futurismo, cubismo, expressionismo, dadaísmo). O estopim remoto foi a exposição de Anita Malfatti em 1917 e as críticas duras de Monteiro Lobato, que uniram os jovens artistas em defesa da renovação. A data também dialogava com o centenário da Independência (1822–1922): era hora de repensar o que é ser brasileiro."
+      },
+      {
+        "titulo": "Legado",
+        "texto": "A Semana abriu caminho para o Modernismo brasileiro, com a valorização da língua falada, da cultura popular e indígena e da liberdade formal. Seus desdobramentos incluem o Manifesto Pau-Brasil (1924) e o Movimento Antropofágico (1928)."
+      }
+    ]
+  },
+  "obras": [
+    {
+      "id": "homem-amarelo",
+      "titulo": "O Homem Amarelo",
+      "autor": "Anita Malfatti",
+      "ano": "1915–1916",
+      "naSemana": true,
+      "parede": "esquerda",
+      "z": -3.5,
+      "largura": 1.1,
+      "altura": 1.4,
+      "imagem": "assets/obras/homem-amarelo.jpg",
+      "cores": ["#d9a21b", "#2f5d3a", "#8c2f1b"],
+      "tecnica": "Óleo sobre tela.",
+      "tecnicas": "Pintura a óleo com cores intensas e pouco naturais, contrastes fortes entre quente e frio, pinceladas largas e deformação da figura. Reflete o contato de Anita com o expressionismo na Alemanha (1910–1914) e com a arte moderna em Nova York (1915–1916).",
+      "simbolismo": "Representa a ruptura com o retrato acadêmico: o rosto e o corpo não buscam fidelidade, e sim expressão. É um dos símbolos da chegada da arte moderna ao Brasil e esteve no centro da polêmica da exposição de 1917."
+    },
+    {
+      "id": "a-boba",
+      "titulo": "A Boba",
+      "autor": "Anita Malfatti",
+      "ano": "c. 1915–1916",
+      "naSemana": true,
+      "parede": "esquerda",
+      "z": 0,
+      "largura": 1.0,
+      "altura": 1.3,
+      "imagem": "assets/obras/a-boba.jpg",
+      "cores": ["#2a4a7a", "#c04a3a", "#e0c070"],
+      "tecnica": "Óleo sobre tela.",
+      "tecnicas": "Óleo sobre tela com formas distorcidas, cores contrastantes e composição desequilibrada, características do expressionismo. O desenho não segue a proporção realista.",
+      "simbolismo": "Retrato psicológico: a figura de olhar perdido e postura estranha mostra a interioridade e a inquietação humana, mais que a aparência. Simboliza a liberdade do artista de deformar a realidade para expressar sentimentos."
+    },
+    {
+      "id": "capa-catalogo",
+      "titulo": "Capa do catálogo da Semana de 22",
+      "autor": "Di Cavalcanti",
+      "ano": "1922",
+      "naSemana": true,
+      "parede": "esquerda",
+      "z": 3.5,
+      "largura": 1.0,
+      "altura": 1.3,
+      "imagem": "assets/obras/capa-catalogo.jpg",
+      "cores": ["#1a1a1a", "#d9a441", "#b0302a"],
+      "tecnica": "Ilustração gráfica.",
+      "tecnicas": "Desenho gráfico com formas estilizadas e linhas simplificadas, feito para impressão. Usa a linguagem do design moderno, e não a pintura de cavalete tradicional.",
+      "simbolismo": "A capa anunciava a proposta do evento: uma arte nova e visualmente ousada. Di Cavalcanti foi também um dos idealizadores da Semana e depois se tornou um dos grandes pintores do cotidiano e do povo brasileiro."
+    },
+    {
+      "id": "eva",
+      "titulo": "Eva",
+      "autor": "Victor Brecheret",
+      "ano": "1919",
+      "naSemana": true,
+      "parede": "direita",
+      "z": -3.5,
+      "largura": 0.9,
+      "altura": 1.4,
+      "imagem": "assets/obras/eva.jpg",
+      "cores": ["#7a6a58", "#c9b79a", "#3a2f26"],
+      "tecnica": "Escultura (modelagem e fundição).",
+      "tecnicas": "Escultura de formas simplificadas, volumes arredondados e linhas contínuas, em diálogo com o Art Déco e com a síntese formal da escultura moderna. Dispensa detalhes realistas.",
+      "simbolismo": "Retoma o tema bíblico de Eva por meio de uma estética moderna. A sua participação no saguão do Teatro Municipal levou a escultura brasileira para o centro do debate modernista. Mário de Andrade foi um dos grandes admiradores de Brecheret."
+    },
+    {
+      "id": "a-negra",
+      "titulo": "A Negra",
+      "autor": "Tarsila do Amaral",
+      "ano": "1923",
+      "naSemana": false,
+      "parede": "direita",
+      "z": 0,
+      "largura": 1.0,
+      "altura": 1.3,
+      "imagem": "assets/obras/a-negra.jpg",
+      "cores": ["#6a4a2a", "#2f6a4a", "#d9c9a8"],
+      "tecnica": "Óleo sobre tela.",
+      "tecnicas": "Pintura a óleo com figura monumental e simplificada, volumes arredondados e fundo geométrico. Reflete o aprendizado de Tarsila em Paris com Fernand Léger e André Lhote, ligado ao cubismo.",
+      "simbolismo": "Evoca a herança africana na formação do Brasil e a memória da escravidão, com a figura da mulher negra, a maternidade e o corpo em escala monumental. É uma das primeiras obras que unem a linguagem cubista a temas brasileiros."
+    },
+    {
+      "id": "abaporu",
+      "titulo": "Abaporu",
+      "autor": "Tarsila do Amaral",
+      "ano": "1928",
+      "naSemana": false,
+      "parede": "direita",
+      "z": 3.5,
+      "largura": 1.1,
+      "altura": 1.3,
+      "imagem": "assets/obras/abaporu.jpg",
+      "cores": ["#2e7d4f", "#e8c13a", "#2a5aa0"],
+      "tecnica": "Óleo sobre tela.",
+      "tecnicas": "Figura de pés e mãos enormes e cabeça minúscula, cores vibrantes, cacto e sol estilizados, céu azul. Mistura elementos de surrealismo, cubismo e de uma paisagem tropical simplificada.",
+      "simbolismo": "O nome vem do tupi e significa 'o homem que come gente'. A obra inspirou o Movimento Antropofágico, de Oswald de Andrade: devorar a cultura estrangeira e transformá-la em arte brasileira."
+    }
+  ]
+}

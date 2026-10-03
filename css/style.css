@@ -1,0 +1,29 @@
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#1a1410;color:#f3ead9;font-family:Georgia,'Times New Roman',serif;overflow:hidden;touch-action:none}
+[hidden]{display:none!important}
+
+.intro{position:fixed;inset:0;z-index:30;display:flex;align-items:center;justify-content:center;padding:16px;background:rgba(20,14,10,.92)}
+.intro-card{max-width:420px;text-align:center}
+.intro-ano{letter-spacing:.3em;color:#d9a441;margin:0 0 .5rem;font-size:.85rem}
+.intro h1{margin:0 0 1rem;font-size:2.2rem;letter-spacing:.05em}
+.intro ul{text-align:left;padding-left:1.2rem;line-height:1.6;color:#d8ccb6}
+button{font:inherit;cursor:pointer}
+#btn-entrar{margin-top:1rem;padding:.8rem 1.6rem;border:0;border-radius:999px;background:#d9a441;color:#1a1410;font-weight:bold;font-size:1rem}
+
+.hud{position:fixed;inset:0;pointer-events:none;z-index:10}
+.dica{position:absolute;top:max(16px,env(safe-area-inset-top));left:50%;transform:translateX(-50%);padding:.5rem 1rem;border-radius:999px;background:rgba(26,20,16,.85);border:1px solid #d9a441;font-size:.9rem;max-width:90vw;text-align:center}
+.joy{position:absolute;left:max(20px,env(safe-area-inset-left));bottom:max(24px,env(safe-area-inset-bottom));width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3);pointer-events:auto;touch-action:none}
+.joy-knob{position:absolute;left:35px;top:35px;width:50px;height:50px;border-radius:50%;background:rgba(217,164,65,.85)}
+
+.toast{position:fixed;left:50%;bottom:170px;transform:translateX(-50%);z-index:20;padding:.6rem 1rem;border-radius:12px;background:rgba(26,20,16,.92);border:1px solid #d9a441;font-size:.9rem;max-width:90vw;text-align:center}
+
+.painel{position:fixed;inset:0;z-index:40;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55)}
+.painel-card{position:relative;width:100%;max-width:640px;max-height:85vh;overflow-y:auto;padding:1.4rem 1.2rem calc(1.4rem + env(safe-area-inset-bottom));background:#f3ead9;color:#2a2118;border-radius:18px 18px 0 0;touch-action:pan-y}
+.painel-fechar{position:absolute;top:.4rem;right:.8rem;border:0;background:none;font-size:2rem;line-height:1;color:#2a2118}
+.etiqueta{margin:0 0 .3rem;font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;color:#9a6b12}
+.painel h2{margin:0;font-size:1.5rem;padding-right:2rem}
+.sub{margin:.2rem 0 1rem;color:#6a5a45;font-style:italic}
+.painel h3{margin:1.1rem 0 .3rem;font-size:1rem;color:#7a4a12;border-bottom:1px solid #d9c9a8;padding-bottom:.2rem}
+.painel p{line-height:1.55;margin:.3rem 0}
+.aviso{background:#fff3cf;border-left:4px solid #d9a441;padding:.5rem .7rem;font-size:.9rem}
+@media (min-width:700px){.painel{align-items:center}.painel-card{border-radius:18px}}

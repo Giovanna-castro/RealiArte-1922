@@ -8,6 +8,15 @@ Sala de museu virtual em 360° (A-Frame / WebGL) com obras ligadas à **Semana d
 - **Quadros:** toque num quadro. Se estiver longe, você é levado até ele. Abre autor, técnicas, o que inspirou a obra e o que ela simboliza.
 - **Parede central:** toque no letreiro "Semana de Arte Moderna" para ler o que foi a Semana e o que a motivou.
 
+## Modo AR (câmera) — `ar.html`
+Realidade aumentada com marcador (AR.js), que funciona no **iPhone (Safari)** e no Android.
+1. Abra `ar/marcador-realiarte.png` em outra tela (computador) ou imprima.
+2. No celular, abra `.../ar.html`, toque em **Abrir câmera** e permita o uso da câmera.
+3. Aponte para o marcador, com boa luz. A exposição aparece em miniatura sobre ele.
+4. Toque num quadro ou no letreiro para ver as informações.
+
+Obs.: `js/vendor/aframe-1.3.0.min.js` é usado só no modo AR (o AR.js é incompatível com o A-Frame 1.6 da sala 360°).
+
 ## Rodar no computador
 ```bash
 python3 -m http.server 8000
@@ -38,4 +47,4 @@ assets/obras/     imagens dos quadros
 ```
 
 ## Próximos passos possíveis
-Modo AR real (WebXR, só Chrome Android), áudio-guia, mais salas, PWA offline.
+AR por superfície (WebXR, só Chrome Android), áudio-guia, mais salas, PWA offline.

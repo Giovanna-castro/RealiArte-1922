@@ -28,3 +28,5 @@ button{font:inherit;cursor:pointer}
 .painel-img{display:block;width:100%;max-height:34vh;object-fit:contain;background:#e4d8c0;border-radius:8px;margin:.2rem 0 .6rem}
 .aviso{background:#fff3cf;border-left:4px solid #d9a441;padding:.5rem .7rem;font-size:.9rem}
 @media (min-width:700px){.painel{align-items:center}.painel-card{border-radius:18px}}
+
+.link-ar{color:#d9a441;font-size:.95rem}

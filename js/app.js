@@ -2,6 +2,7 @@
 (function () {
   'use strict';
 
+  var AR = !!window.REALIARTE_AR;   // ar.html: sala em miniatura sobre o marcador
   var ALTURA_QUADRO = 1.7;      // altura do centro dos quadros (m)
   var DIST_QUADRO = 4.5;        // distância máxima para abrir um quadro (m)
   var DIST_LETREIRO = 7;        // distância máxima para abrir o letreiro (m)
@@ -216,7 +217,7 @@
     [-4, 0, 4].forEach(function (z) {
       criar('a-entity', { position: '0 3.3 ' + z, light: 'type: point; color: #ffe8c0; intensity: 0.45; distance: 9; decay: 1' }, sala);
     });
-    criar('a-sky', { color: '#1a1410' }, sala);
+    if (!AR) criar('a-sky', { color: '#1a1410' }, sala);
 
     // piso e tapete
     criar('a-plane', { rotation: '-90 0 0', width: 2 * X, height: 2 * Z,
@@ -224,35 +225,40 @@
     criar('a-plane', { rotation: '-90 0 0', position: '0 0.012 -0.5', width: 4, height: 8,
       material: 'src: ' + T.tapete + '; roughness: 1' }, sala);
 
-    // teto, vigas e claraboia
-    criar('a-plane', { position: '0 ' + H + ' 0', rotation: '90 0 0', width: 2 * X, height: 2 * Z, material: 'color: #f4eee2; roughness: 1' }, sala);
-    [-5.6, -2.8, 0, 2.8, 5.6].forEach(function (z) { caixa(sala, '0 ' + (H - 0.1) + ' ' + z, [2 * X, 0.2, 0.3], '#3d2a1c'); });
-    criar('a-plane', { position: '0 ' + (H - 0.01) + ' -1.4', rotation: '90 0 0', width: 3, height: 6,
-      material: 'src: ' + T.claraboia + '; shader: flat' }, sala);
-    [[0, -4.4, 3.3, 0.15], [0, 1.6, 3.3, 0.15]].forEach(function (f) { caixa(sala, f[0] + ' ' + (H - 0.04) + ' ' + f[1], [f[2], 0.08, f[3]], '#2b1d14'); });
-    [-1.575, 1.575].forEach(function (x) { caixa(sala, x + ' ' + (H - 0.04) + ' -1.4', [0.15, 0.08, 6.3], '#2b1d14'); });
+    // teto, vigas e claraboia (na AR a sala fica aberta por cima)
+    if (!AR) {
+      criar('a-plane', { position: '0 ' + H + ' 0', rotation: '90 0 0', width: 2 * X, height: 2 * Z, material: 'color: #f4eee2; roughness: 1' }, sala);
+      [-5.6, -2.8, 0, 2.8, 5.6].forEach(function (z) { caixa(sala, '0 ' + (H - 0.1) + ' ' + z, [2 * X, 0.2, 0.3], '#3d2a1c'); });
+      criar('a-plane', { position: '0 ' + (H - 0.01) + ' -1.4', rotation: '90 0 0', width: 3, height: 6,
+        material: 'src: ' + T.claraboia + '; shader: flat' }, sala);
+      [[0, -4.4, 3.3, 0.15], [0, 1.6, 3.3, 0.15]].forEach(function (f) { caixa(sala, f[0] + ' ' + (H - 0.04) + ' ' + f[1], [f[2], 0.08, f[3]], '#2b1d14'); });
+      [-1.575, 1.575].forEach(function (x) { caixa(sala, x + ' ' + (H - 0.04) + ' -1.4', [0.15, 0.08, 6.3], '#2b1d14'); });
+
+
+    }
 
     // paredes: fundo (central, vinho), frente, laterais (bege)
     function parede(pos, rot, w, cor) {
       criar('a-plane', { position: pos, rotation: rot, width: w, height: H, material: 'src: ' + T.parede + '; repeat: ' + Math.round(w / 2) + ' 2; color: ' + cor + '; roughness: 1' }, sala);
     }
     parede('0 ' + H / 2 + ' ' + -Z, '0 0 0', 2 * X, '#8a2a3a');
-    parede('0 ' + H / 2 + ' ' + Z, '0 180 0', 2 * X, '#cdbfa3');
+    if (!AR) parede('0 ' + H / 2 + ' ' + Z, '0 180 0', 2 * X, '#cdbfa3');
     parede(-X + ' ' + H / 2 + ' 0', '0 90 0', 2 * Z, '#d6c8aa');
     parede(X + ' ' + H / 2 + ' 0', '0 -90 0', 2 * Z, '#d6c8aa');
 
     // lambri (parte baixa), friso, rodapé e moldura do teto
     var lam = [[0, -Z + 0.01, 0, 2 * X], [0, Z - 0.01, 180, 2 * X], [-X + 0.01, 0, 90, 2 * Z], [X - 0.01, 0, -90, 2 * Z]];
-    lam.forEach(function (l) {
+    lam.forEach(function (l, i) {
+      if (AR && i === 1) return;
       criar('a-plane', { position: l[0] + ' 0.5 ' + l[1], rotation: '0 ' + l[2] + ' 0', width: l[3], height: 1,
         material: 'src: ' + T.lambri + '; repeat: ' + Math.round(l[3] / 1) + ' 1; roughness: 0.6' }, sala);
     });
     caixa(sala, '0 1.03 ' + (-Z + 0.04), [2 * X, 0.06, 0.08], '#d9a441', { m: 0.5, r: 0.4 });
-    caixa(sala, '0 1.03 ' + (Z - 0.04), [2 * X, 0.06, 0.08], '#d9a441', { m: 0.5, r: 0.4 });
+    if (!AR) caixa(sala, '0 1.03 ' + (Z - 0.04), [2 * X, 0.06, 0.08], '#d9a441', { m: 0.5, r: 0.4 });
     caixa(sala, (-X + 0.04) + ' 1.03 0', [0.08, 0.06, 2 * Z], '#d9a441', { m: 0.5, r: 0.4 });
     caixa(sala, (X - 0.04) + ' 1.03 0', [0.08, 0.06, 2 * Z], '#d9a441', { m: 0.5, r: 0.4 });
     caixa(sala, '0 ' + (H - 0.12) + ' ' + (-Z + 0.08), [2 * X, 0.24, 0.16], '#efe6d2');
-    caixa(sala, '0 ' + (H - 0.12) + ' ' + (Z - 0.08), [2 * X, 0.24, 0.16], '#efe6d2');
+    if (!AR) caixa(sala, '0 ' + (H - 0.12) + ' ' + (Z - 0.08), [2 * X, 0.24, 0.16], '#efe6d2');
     caixa(sala, (-X + 0.08) + ' ' + (H - 0.12) + ' 0', [0.16, 0.24, 2 * Z], '#efe6d2');
     caixa(sala, (X - 0.08) + ' ' + (H - 0.12) + ' 0', [0.16, 0.24, 2 * Z], '#efe6d2');
 
@@ -283,13 +289,14 @@
       material: 'src: ' + T.brilho + '; shader: flat; transparent: true; blending: additive; depthWrite: false' }, sala);
     banco(sala, 0, -4.4);
 
-    // placa de entrada na parede da frente + saída
-    criar('a-entity', { position: '0 2.5 ' + (Z - 0.05), rotation: '0 180 0',
-      text: 'value: REALIARTE 1922\\nExposição virtual · Semana de Arte Moderna; align: center; width: 5; color: #5a3a14; lineHeight: 60' }, sala);
-    caixa(sala, '3.8 1.3 ' + (Z - 0.05), [1.4, 2.6, 0.08], '#2b1d14');
-    caixa(sala, '3.8 1.3 ' + (Z - 0.1), [1.15, 2.4, 0.05], '#0d0a08');
-    criar('a-entity', { position: '3.8 2.75 ' + (Z - 0.12), rotation: '0 180 0',
-      text: 'value: SAÍDA; align: center; width: 1.8; color: #5ee08a' }, sala);
+    if (!AR) {
+      criar('a-entity', { position: '0 2.5 ' + (Z - 0.05), rotation: '0 180 0',
+        text: 'value: REALIARTE 1922\\nExposição virtual · Semana de Arte Moderna; align: center; width: 5; color: #5a3a14; lineHeight: 60' }, sala);
+      caixa(sala, '3.8 1.3 ' + (Z - 0.05), [1.4, 2.6, 0.08], '#2b1d14');
+      caixa(sala, '3.8 1.3 ' + (Z - 0.1), [1.15, 2.4, 0.05], '#0d0a08');
+      criar('a-entity', { position: '3.8 2.75 ' + (Z - 0.12), rotation: '0 180 0',
+        text: 'value: SAÍDA; align: center; width: 1.8; color: #5ee08a' }, sala);
+    }
 
     // plantas e esculturas
     planta(sala, -5.3, -6.1, 1.0); planta(sala, 5.3, -6.1, 1.0);
@@ -354,6 +361,7 @@
   // se estiver perto, abre; se estiver longe, leva o visitante até lá e abre
   function tentar(alvo, acao) {
     if (!$('painel').hidden || andando) return;
+    if (AR) { acao(); return; }
     if (distancia(alvo.pos) <= alvo.max) { acao(); return; }
     toast('Indo até a obra…');
     irAte(alvo.destino[0], alvo.destino[1], acao);
@@ -447,16 +455,16 @@
       dados = d;
       construirSala();
       construirQuadros();
-      $('cena').setAttribute('proximidade', '');
+      if (!AR) $('cena').setAttribute('proximidade', '');
     }).catch(function (e) {
       toast('Erro ao carregar as obras. Abra via servidor (http/https).');
       console.error(e);
     });
 
-    iniciarJoystick();
+    if (!AR) iniciarJoystick();
     $('btn-entrar').addEventListener('click', function () {
       $('intro').hidden = true;
-      $('hud').hidden = false;
+      if ($('hud')) $('hud').hidden = false;
     });
     $('painel-fechar').addEventListener('click', fecharPainel);
     $('painel').addEventListener('click', function (e) { if (e.target === this) fecharPainel(); });

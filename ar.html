@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>RealiArte 1922 · AR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    html,body{background:transparent}
+    a-scene{position:fixed!important;inset:0}
+    .intro a{color:#d9a441}
+    .topo{position:fixed;top:max(12px,env(safe-area-inset-top));left:12px;z-index:20;padding:.4rem .8rem;border-radius:999px;background:rgba(26,20,16,.85);border:1px solid #d9a441;color:#f3ead9;text-decoration:none;font-size:.85rem}
+    .busca{position:fixed;left:50%;bottom:max(24px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:15;padding:.5rem 1rem;border-radius:999px;background:rgba(26,20,16,.85);border:1px solid #d9a441;font-size:.9rem;text-align:center;max-width:90vw}
+  </style>
+  <script>window.REALIARTE_AR = true;</script>
+  <script src="js/vendor/aframe-1.3.0.min.js"></script>
+  <script src="js/vendor/aframe-ar.js"></script>
+</head>
+<body>
+  <a-scene id="cena" embedded vr-mode-ui="enabled: false" loading-screen="enabled: false"
+           arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono; cameraParametersUrl: ar/camera_para.dat; maxDetectionRate: 30; canvasWidth: 640; canvasHeight: 480"
+           renderer="logarithmicDepthBuffer: true; alpha: true; antialias: true"
+           cursor="rayOrigin: mouse" raycaster="objects: .clicavel; far: 100">
+    <a-marker id="marcador" type="pattern" url="ar/marcador-realiarte.patt" smooth="true" smoothCount="8">
+      <a-entity id="sala" scale="0.12 0.12 0.12" rotation="0 0 0"></a-entity>
+    </a-marker>
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <a class="topo" href="index.html">← Sala 360°</a>
+  <div id="busca" class="busca">Aponte a câmera para o marcador</div>
+
+  <div id="intro" class="intro">
+    <div class="intro-card">
+      <p class="intro-ano">Realidade aumentada</p>
+      <h1>RealiArte 1922</h1>
+      <p>A exposição aparece em miniatura sobre uma imagem-guia (marcador), vista pela câmera do celular.</p>
+      <ul>
+        <li>Abra o <a href="ar/marcador-realiarte.png" target="_blank">marcador</a> em outra tela (computador) ou imprima.</li>
+        <li>Permita o uso da câmera quando o navegador pedir.</li>
+        <li>Aponte a câmera para o marcador, com boa luz.</li>
+        <li>Toque num quadro ou no letreiro para ver as informações.</li>
+      </ul>
+      <button id="btn-entrar">Abrir câmera</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+  <div id="painel" class="painel" hidden role="dialog" aria-modal="true">
+    <div class="painel-card">
+      <button id="painel-fechar" class="painel-fechar" aria-label="Fechar">×</button>
+      <p id="painel-etiqueta" class="etiqueta"></p>
+      <h2 id="painel-titulo"></h2>
+      <p id="painel-sub" class="sub"></p>
+      <div id="painel-corpo"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    // o AR.js define a projeção da câmera mas não a inversa, que o toque (raycast) usa
+    AFRAME.registerComponent('corrige-toque', {
+      tick: function () {
+        var c = this.el.sceneEl.camera;
+        if (c) c.projectionMatrixInverse.copy(c.projectionMatrix).invert();
+      }
+    });
+    document.getElementById('cena').setAttribute('corrige-toque', '');
+    var m = document.getElementById('marcador'), b = document.getElementById('busca');
+    m.addEventListener('markerFound', function () { b.hidden = true; });
+    m.addEventListener('markerLost', function () { b.hidden = false; });
+  </script>
+</body>
+</html>

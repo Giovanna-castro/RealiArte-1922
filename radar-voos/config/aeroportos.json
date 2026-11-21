@@ -1,0 +1,30 @@
+{
+  "_leia_me": "Lista de aeroportos do radar, em ordem de prioridade. 'ativo: false' = sem painel oficial legível hoje (o motivo está em 'obs'); esses aeroportos ainda aparecem como origem/destino de voos lidos nos outros painéis. 'fonte' diz qual leitor usar. Coordenadas aproximadas, usadas na segmentação dos anúncios.",
+  "aeroportos": [
+    { "icao": "SBGR", "iata": "GRU", "nome": "Guarulhos", "cidade": "São Paulo", "uf": "SP", "lat": -23.4356, "lon": -46.4731, "ativo": true, "fonte": "gru" },
+    { "icao": "SBSP", "iata": "CGH", "nome": "Congonhas", "cidade": "São Paulo", "uf": "SP", "lat": -23.6261, "lon": -46.6564, "ativo": false, "obs": "Aena bloqueia acesso automatizado" },
+    { "icao": "SBKP", "iata": "VCP", "nome": "Viracopos", "cidade": "Campinas", "uf": "SP", "lat": -23.0074, "lon": -47.1345, "ativo": false, "obs": "certificado do site falha" },
+    { "icao": "SBGL", "iata": "GIG", "nome": "Galeão", "cidade": "Rio de Janeiro", "uf": "RJ", "lat": -22.8099, "lon": -43.2506, "ativo": true, "fonte": "riogaleao" },
+    { "icao": "SBRJ", "iata": "SDU", "nome": "Santos Dumont", "cidade": "Rio de Janeiro", "uf": "RJ", "lat": -22.9105, "lon": -43.1631, "ativo": false, "obs": "Infraero rejeita acesso" },
+    { "icao": "SBBR", "iata": "BSB", "nome": "Brasília", "cidade": "Brasília", "uf": "DF", "lat": -15.8711, "lon": -47.9186, "ativo": true, "fonte": "bsb" },
+    { "icao": "SBCF", "iata": "CNF", "nome": "Confins", "cidade": "Belo Horizonte", "uf": "MG", "lat": -19.6244, "lon": -43.9719, "ativo": false, "obs": "painel quebra ao carregar" },
+    { "icao": "SBSV", "iata": "SSA", "nome": "Salvador", "cidade": "Salvador", "uf": "BA", "lat": -12.9086, "lon": -38.3225, "ativo": true, "fonte": "salvador", "url": "https://www.salvador-airport.com.br/" },
+    { "icao": "SBRF", "iata": "REC", "nome": "Recife", "cidade": "Recife", "uf": "PE", "lat": -8.1265, "lon": -34.9236, "ativo": false, "obs": "Aena bloqueia acesso automatizado" },
+    { "icao": "SBFZ", "iata": "FOR", "nome": "Fortaleza", "cidade": "Fortaleza", "uf": "CE", "lat": -3.7763, "lon": -38.5326, "ativo": true, "fonte": "fraport", "url": "https://fortaleza-airport.com.br/pt/painel-de-voos" },
+    { "icao": "SBPA", "iata": "POA", "nome": "Porto Alegre", "cidade": "Porto Alegre", "uf": "RS", "lat": -29.9939, "lon": -51.1714, "ativo": true, "fonte": "fraport", "url": "https://portoalegre-airport.com.br/pt/painel-de-voos" },
+    { "icao": "SBCT", "iata": "CWB", "nome": "Curitiba", "cidade": "São José dos Pinhais", "uf": "PR", "lat": -25.5285, "lon": -49.1758, "ativo": true, "fonte": "motiva", "slug": "curitiba-pr" },
+    { "icao": "SBFL", "iata": "FLN", "nome": "Florianópolis", "cidade": "Florianópolis", "uf": "SC", "lat": -27.6703, "lon": -48.5525, "ativo": true, "fonte": "floripa", "url": "https://floripa-airport.com/painel-de-voos" },
+    { "icao": "SBBE", "iata": "BEL", "nome": "Belém", "cidade": "Belém", "uf": "PA", "lat": -1.3793, "lon": -48.4763, "ativo": false, "obs": "site sem painel de voos" },
+    { "icao": "SBEG", "iata": "MAO", "nome": "Manaus", "cidade": "Manaus", "uf": "AM", "lat": -3.0386, "lon": -60.0497, "ativo": false, "obs": "site recusa conexão (502)" },
+    { "icao": "SBJP", "iata": "JPA", "nome": "João Pessoa", "cidade": "Bayeux", "uf": "PB", "lat": -7.1484, "lon": -34.9504, "ativo": false, "obs": "Aena bloqueia acesso automatizado" },
+    { "icao": "SBNT", "iata": "NAT", "nome": "Natal", "cidade": "São Gonçalo do Amarante", "uf": "RN", "lat": -5.7681, "lon": -35.3761, "ativo": false, "obs": "site recusa conexão (502)" },
+    { "icao": "SBMO", "iata": "MCZ", "nome": "Maceió", "cidade": "Rio Largo", "uf": "AL", "lat": -9.5108, "lon": -35.7917, "ativo": false, "obs": "Aena bloqueia acesso automatizado" },
+    { "icao": "SBAR", "iata": "AJU", "nome": "Aracaju", "cidade": "Aracaju", "uf": "SE", "lat": -10.9840, "lon": -37.0703, "ativo": false, "obs": "Aena bloqueia acesso automatizado" },
+    { "icao": "SBGO", "iata": "GYN", "nome": "Goiânia", "cidade": "Goiânia", "uf": "GO", "lat": -16.6320, "lon": -49.2207, "ativo": true, "fonte": "motiva", "slug": "goiania-go" },
+    { "icao": "SBVT", "iata": "VIX", "nome": "Vitória", "cidade": "Vitória", "uf": "ES", "lat": -20.2581, "lon": -40.2864, "ativo": false, "obs": "verificação anti-robô" },
+    { "icao": "SBCY", "iata": "CGB", "nome": "Cuiabá", "cidade": "Várzea Grande", "uf": "MT", "lat": -15.6529, "lon": -56.1167, "ativo": false, "obs": "site não conecta" },
+    { "icao": "SBSL", "iata": "SLZ", "nome": "São Luís", "cidade": "São Luís", "uf": "MA", "lat": -2.5854, "lon": -44.2341, "ativo": true, "fonte": "motiva", "slug": "sao-luis-ma" },
+    { "icao": "SBTE", "iata": "THE", "nome": "Teresina", "cidade": "Teresina", "uf": "PI", "lat": -5.0599, "lon": -42.8235, "ativo": true, "fonte": "motiva", "slug": "teresina-pi" },
+    { "icao": "SBNF", "iata": "NVT", "nome": "Navegantes", "cidade": "Navegantes", "uf": "SC", "lat": -26.8800, "lon": -48.6514, "ativo": true, "fonte": "motiva", "slug": "navegantes-sc" }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "_leia_me": "Limites do radar. Tempos em minutos.",
+  "atraso_minimo_evento": 180,
+  "atraso_prioridade_alta": 240,
+  "atraso_maximo_peso": 480,
+  "massa_minimo_voos": 5,
+  "massa_atraso_minimo": 120,
+  "massa_janela": 120,
+  "nota_minima_aviso": 6,
+  "nota_minima_arte": 7,
+  "dias_historico": 7,
+  "companhias_cargueiras_regex": "cargo|carga|fedex|\\bups\\b|dhl|atlas air|sideral|modern logistics|cargolux|absa|kalitta|western global|polar air|total linhas|aerosucre|mas air|\\bluxair cargo"
+}
